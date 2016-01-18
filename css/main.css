@@ -1,0 +1,410 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: 'Khmer';
+  src: url("../fonts/KhmerUI.eot");
+  src: url("../fonts/KhmerUI.eot") format("embedded-opentype"), url("../fonts/KhmerUI.woff2") format("woff2"), url("../fonts/KhmerUI.woff") format("woff"), url("../fonts/KhmerUI.ttf") format("truetype"), url("../fonts/KhmerUI.svg#KhmerUI") format("svg");
+}
+html {
+  font-size: 18px;
+  font-family: "Khmer";
+}
+
+body {
+  background: #232222;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  background: #000000;
+}
+header a {
+  text-decoration: none;
+}
+
+h1 {
+  margin-left: 20px;
+  margin-top: 25px;
+  font-size: 1.6rem;
+  display: inline-block;
+  text-transform: uppercase;
+}
+h1 a {
+  color: #508e1e;
+}
+h1 img {
+  position: relative;
+  top: 3px;
+  width: 25px;
+}
+
+nav {
+  position: relative;
+  margin-right: 20px;
+  margin-top: 35px;
+  float: right;
+  vertical-align: bottom;
+}
+nav li {
+  display: inline-block;
+}
+nav li:not(:last-of-type) {
+  margin-right: 20px;
+}
+nav li a {
+  color: #ffffff;
+}
+nav #menu-toggle {
+  display: none;
+}
+
+.buttons li {
+  display: inline-block;
+}
+
+.buttons a,
+.buttons button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  background: #508e1e;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 560px) {
+  nav ul {
+    display: none;
+  }
+  nav #menu-toggle {
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    font-family: "Khmer";
+    font-size: 1rem;
+    color: #ffffff;
+    border: 0;
+    outline: 0;
+  }
+  nav .menu-toggled {
+    position: absolute;
+    display: block;
+    top: 100%;
+    right: -20px;
+    background: #232222;
+    padding: 10px;
+    -moz-box-shadow: inset 0px 2px 1px 0px black;
+    -webkit-box-shadow: inset 0px 2px 1px 0px black;
+    box-shadow: inset 0px 2px 1px 0px black;
+  }
+  nav .menu-toggled li {
+    margin-top: 20px;
+  }
+}
+h2 {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+section {
+  padding: 30px 0;
+}
+section > div {
+  margin: auto;
+  max-width: 1024px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+section.top {
+  background: url(../img/bg.png);
+  text-align: center;
+  -moz-box-shadow: inset 0px -5px 10px 0px rgba(0, 0, 0, 0.2), inset 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0px -5px 10px 0px rgba(0, 0, 0, 0.2), inset 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px -5px 10px 0px rgba(0, 0, 0, 0.2), inset 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+section.top ul {
+  display: inline-block;
+}
+section.top li:not(:last-of-type) {
+  margin-right: 10px;
+}
+section.top .logo {
+  display: block;
+  max-width: 200px;
+  margin: 0 auto 20px;
+}
+section.top p {
+  max-width: 80%;
+  margin: auto;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 2rem;
+}
+
+.intro {
+  text-align: center;
+}
+
+#wrapper {
+  opacity: 0;
+  transition: opacity .35s ease-in-out;
+}
+
+#doc {
+  position: relative;
+}
+
+.documentation-menu {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  width: 240px;
+  background: #ffffff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+.documentation-menu h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.documentation-menu ol {
+  margin-left: 10px;
+  margin-bottom: 15px;
+  list-style: decimal inside;
+}
+.documentation-menu ol a {
+  color: #555555;
+  cursor: pointer;
+}
+.documentation-menu ol a:hover {
+  color: #000000;
+}
+
+.documentation-menu + section {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 300px;
+}
+
+article {
+  font-size: 18px;
+  padding: 20px;
+  background: #ffffff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+article p {
+  line-height: 1.3rem;
+}
+article h2 {
+  margin-bottom: 10px;
+}
+article p + h2 {
+  margin-top: 25px;
+}
+article p + p {
+  margin-top: 10px;
+}
+article ul {
+  list-style-type: initial;
+  list-style-position: inside;
+  margin: 15px;
+}
+article li {
+  margin-bottom: 10px;
+}
+
+pre {
+  width: 90%;
+  margin: 25px auto;
+  font-family: Consolas;
+  font-size: 0.9rem;
+}
+
+#wrapper.faded-in {
+  opacity: 1;
+}
+
+.transition-fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.transition-fade-leave {
+  opacity: 1;
+}
+
+.transition-fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+/*
+
+Railscasts-like style (c) Visoft, Inc. (Damien White)
+
+*/
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #232323;
+  color: #e6e1dc;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #bc9458;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #c26230;
+}
+
+.hljs-string,
+.hljs-number,
+.hljs-regexp,
+.hljs-variable,
+.hljs-template-variable {
+  color: #a5c261;
+}
+
+.hljs-subst {
+  color: #519f50;
+}
+
+.hljs-tag,
+.hljs-name {
+  color: #e8bf6a;
+}
+
+.hljs-type {
+  color: #da4939;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-attr,
+.hljs-link {
+  color: #6d9cbe;
+}
+
+.hljs-params {
+  color: #d0d0ff;
+}
+
+.hljs-attribute {
+  color: #cda869;
+}
+
+.hljs-meta {
+  color: #9b859d;
+}
+
+.hljs-title,
+.hljs-section {
+  color: #ffc66d;
+}
+
+.hljs-addition {
+  background-color: #144212;
+  color: #e6e1dc;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: #600;
+  color: #e6e1dc;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-selector-class {
+  color: #9b703f;
+}
+
+.hljs-selector-id {
+  color: #8b98ab;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
