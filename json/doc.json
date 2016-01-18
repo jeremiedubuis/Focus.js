@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Main",
+        "articles":[
+            {
+                "title": "Model",
+                "content": " '''var Todo = Focus.Model('Todo', {\n\n    attributes: {\n\n        done: false,\n\n        text: \"\"\n\n    },\n\n    init: function() { }\n\n});''' \n\nset (object) || (attribute: string, value): Set the model's attributes object either by extending it with an object or by specifying an attribute and value.\n\nget( [attribute: string]) : returns a single attribute or all of the objects attributes\n\nhas(attribute: string): return true if provided attribute is set for this model\n\nattributeIs (attribute: string, validatorType): Can be used in conjonction with the Focus Validator to validate a ValidatorType (a RegExp or a pattern defined in the Validator regex object).\n\nrequest (object: object) : makes an ajax request using the Focus.ajax function"
+            },
+            {
+                "title": "Collection",
+                "content": "Collections are extended arrays that inherit sorting methods. They verify that values pushed into it are instances of the collection's model attribute.\n\n '''var Todos = Focus.Collection({\n    model: \"Todo\"\n});'''\npush(model): Adds every model provided to the Collection and verifies they are the right type of object\n\nsortBy (attribute:string, order: \"<\" || \">\"): returns every model by attribute value in ascending or descending order\n\ngetWhere (attribute:string, value): returns every model in collection where attribute === value\n\nsetWhere(attribute: string, oldValue, value) : sets an attribute to value where it used to be oldValue\n\ndeleteWhere (attribute: string, value): Deletes all models in collection where attribute === value\n\ntoJSON: returns every model in collection as json\n\nonDispatch (callback: function) : Registers a camlback to a dispatch string.\n\ndispatch (action: string) : Dispatches a strings. This triggers every dispatcher associated callbacks.\n\n*request ({ url (string): ressource url, method (string) : http request method contentType (string): xhr content-type header, onSuccess (function) : success callback, onFailure (function) : failure callback, data (string) : string parameters linked by ampersands }) * : performs an xhr request"
+            },
+            {
+                "title": "Binder",
+                "content": "**The Binder**\n\n The Focus Binder is a component that binds methods to views. It allows true MVVM communication since views directly invoke binder functions as their own. Binders are functionality holders that are scope to the view that invokes them while allowing the separation of logic into different files. Binders do not depend on views and can therefore be used in a completely agnostic way.\n\n ''' var TodosBinder = Focus.Binder('TodosBinder', {\n\n}); '''\n\n Binders implement functions and behave as an interface between data and views. A view uses a binder to ask for data, the binder then sends the data it acquired from models or anything else back to the view. This encourages functionnal programming and single purpose functions for better maintainability of your code.\n\nBinders are extended with an object holding methods, and they are invoked from the view in the following way : '''TodosBinder(this, ['add','delete','taskDone', 'clearDone']);'''\n\nThis call asks for the array of methods to be bound to the view (this).\n\nIn addition to this functionnality, Binders can access their unrequired methods through the _ method. For example : ''' var TodosBinder = Focus.Binder('TodosBinder', {\n\n    requiredFunction: function(args) {\n\n        this._('independentFunction', args);\n\n    },\n\n    independentFunction: function(args) {\n\n        console.log(args);\n\n    }\n\n}); ''' "
+            }
+        ]
+    },
+
+    {
+        "title": "Components",
+        "articles":[
+            {
+                "title": "Dispatcher",
+                "content": " "
+            },
+            {
+                "title": "Router",
+                "content": " "
+            },
+            {
+                "title": "Validator",
+                "content": " "
+            }
+        ]
+    },
+
+    {
+        "title": "helpers",
+        "articles":[
+            {
+                "title" : "ajax",
+                "content": " "
+            }
+        ]
+    }
+]

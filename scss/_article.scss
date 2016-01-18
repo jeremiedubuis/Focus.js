@@ -1,0 +1,43 @@
+article {
+    font-size: $size-main;
+    padding: 20px;
+    background: $color-bg-article;
+    @include border-radius(5px);
+
+    p {
+        line-height: 1.3rem;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    p+h2 {
+        margin-top: 25px;
+    }
+
+    p+p {
+        margin-top: 10px;
+    }
+
+    ul {
+        list-style-type: initial;
+        list-style-position: inside;
+        margin: 15px;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+}
+
+
+
+
+pre {
+    width: 90%;
+    margin: 25px auto;
+    font-family: Consolas;
+    font-size: 0.9rem;
+}

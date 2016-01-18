@@ -1,0 +1,122 @@
+
+$color-bg : #232222;
+$color-bg-header: #000000;
+$color-bg-article: #ffffff;
+$color-font-light: #ffffff;
+$color1: #508e1e; //green
+
+$color-link: #555555;
+$color-link-hover: #000000;
+$size-main: 18px;
+
+$size-h1: 1.6rem;
+$size-h2: 1.7rem;
+$size-h3: 1.2rem;
+
+$font-main: "Khmer";
+
+html {
+    font-size: $size-main;
+    font-family: $font-main;
+}
+body {
+    background: $color-bg;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background: $color-bg-header;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+h1 {
+    margin-left: 20px;
+    margin-top: 25px;
+    font-size: $size-h1;
+    display: inline-block;
+    text-transform: uppercase;
+
+    a {
+        color: $color1;
+    }
+
+    img {
+        position: relative;
+        top: 3px;
+        width: 25px;
+    }
+}
+nav {
+    position: relative;
+    margin-right: 20px;
+    margin-top: 35px;
+    float: right;
+    vertical-align: bottom;
+
+    li {
+        display: inline-block;
+        &:not(:last-of-type) {
+            margin-right: 20px;
+        }
+
+        a {
+            color: $color-font-light;
+        }
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+}
+
+
+.buttons li {
+    display: inline-block;
+}
+.buttons a,
+.buttons button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: $color-font-light;
+    background: $color1;
+    @include border-radius(5px);
+}
+
+
+@media screen and (max-width: 560px) {
+    nav {
+        ul {
+            display: none;
+        }
+
+        #menu-toggle {
+            display: block;
+            cursor: pointer;
+            background: transparent;
+            font-family: $font-main;
+            font-size: 1rem;
+            color: $color-font-light;
+            border: 0;
+            outline: 0;
+        }
+
+        .menu-toggled {
+            position: absolute;
+            display: block;
+            top: 100%;
+            right: -20px;
+            background: $color-bg;
+            padding: 10px;
+            @include box-shadow(inset 0px 2px 1px 0px rgba(0,0,0,3));
+
+            li {
+                margin-top: 20px;
+            }
+        }
+    }
+}

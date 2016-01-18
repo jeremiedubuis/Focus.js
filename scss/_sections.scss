@@ -1,0 +1,95 @@
+section {
+    padding: 30px 0;
+
+    > div{
+        margin: auto;
+        max-width: 1024px;
+        @include box-sizing(border-box);
+    }
+
+    &.top {
+
+        background: url(../img/bg.png);
+        text-align: center;
+        @include box-shadow(inset 0px -5px 10px 0px rgba(0,0,0,0.2),inset 0px 5px 10px 0px rgba(0,0,0,0.3));
+
+        ul {
+            display: inline-block;
+        }
+
+        li:not(:last-of-type) {
+            margin-right: 10px;
+        }
+
+        .logo {
+            display: block;
+            max-width: 200px;
+            margin: 0 auto 20px;
+        }
+
+        p {
+            max-width: 80%;
+            margin: auto;
+            color: $color-font-light;
+            margin-bottom: 20px;
+            line-height: 2rem;
+        }
+
+    }
+
+    &.main {
+
+
+
+    }
+
+}
+
+
+.intro {
+    text-align: center;
+}
+
+#wrapper {
+    opacity: 0;
+    transition: opacity .35s ease-in-out;
+}
+
+
+#doc {
+    position: relative;
+}
+.documentation-menu {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    width: 240px;
+    background: $color-bg-article;
+    @include border-radius(5px);
+    @include box-sizing(border-box);
+    padding: 10px 20px;
+
+    h2 {
+        font-size: $size-h3;
+        margin-bottom: 5px;
+    }
+
+    ol {
+        margin-left : 10px;
+        margin-bottom: 15px;
+        list-style: decimal inside;
+
+        a {
+            color: $color-link;
+            &:hover { color: $color-link-hover; }
+            cursor: pointer;
+        }
+    }
+}
+
+
+.documentation-menu+section {
+    width: 100%;
+    @include box-sizing(border-box);
+    padding-left: 300px;
+}
