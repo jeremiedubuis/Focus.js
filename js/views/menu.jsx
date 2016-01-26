@@ -22,7 +22,7 @@ class Menu extends React.Component {
 
     render() {
         return <nav>
-            <button id="menu-toggle" onClick={this.toggleMobileMenu}>Menu</button>
+            <button id="menu-toggle" onClick={this.toggleMobileMenu.bind(this)}>Menu</button>
             <ul className={this.state.menuToggled ? "menu-toggled" : ""}>
 
                 <li>
@@ -42,7 +42,7 @@ class Menu extends React.Component {
     }
 
     toggleMobileMenu() {
-        console.log('click');
+        console.log(this);
         this.setState({
             menuToggled: !this.state.menuToggled
         })

@@ -27,6 +27,7 @@ module.exports = Focus.Binder('Section', {
                 content: data
             });
         }
+        App.dispatcher.dispatch('view:loaded');
     }
 
 });

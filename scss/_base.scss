@@ -18,9 +18,14 @@ $font-main: "Khmer";
 html {
     font-size: $size-main;
     font-family: $font-main;
+    width: 100%;
+    height: 100%;
 }
 body {
     background: $color-bg;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
 
 header {
@@ -52,6 +57,7 @@ h1 {
 }
 nav {
     position: relative;
+    z-index: 10;
     margin-right: 20px;
     margin-top: 35px;
     float: right;
@@ -117,6 +123,40 @@ nav {
             li {
                 margin-top: 20px;
             }
+        }
+    }
+}
+
+#loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    display: block;
+    width: 100%;
+    height: 100%;
+    @include transition(all .4s ease-in);
+
+    .img-wrapper {
+        width: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include translate(-50%,-50%);
+    }
+    img {
+        width: 100%;
+        height: auto;
+        opacity: 1;
+        @include transition(opacity .4s ease-in);
+    }
+
+    &.hidden {
+        visibility: hidden;
+        background: rgba(0,0,0,0);
+
+        img {
+            opacity: 0;
         }
     }
 }

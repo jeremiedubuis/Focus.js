@@ -20,6 +20,8 @@ window.App = {
     constants: _consts,
     init() {
 
+        var _this = this;
+        this.loader = document.getElementById('loader');
         this.dispatcher = Focus.Dispatcher();
         ReactDOM.render(
             React.createElement(NavigationMenu, null),
@@ -28,6 +30,10 @@ window.App = {
         this.router = Focus.Router();
         this.registerRoutes();
         this.router.setFromHash('home');
+
+        this.dispatcher.register('view:loaded', function() {
+            _this.loader.className="hidden";
+        });
     },
 
     registerRoutes() {
@@ -48,6 +54,7 @@ window.App = {
         var _wrapper = document.getElementById('wrapper');
         _wrapper.className="";
         var _this = this;
+        this.showLoader();
         setTimeout(function() {
             _this.dispatcher.dispatch(App.constants.actions.viewChange);
             ReactDOM.unmountComponentAtNode(document.getElementById('wrapper'));
@@ -60,6 +67,10 @@ window.App = {
             },350);
 
         },350);
+    },
+
+    showLoader() {
+        this.loader.className = "";
     }
 
 };

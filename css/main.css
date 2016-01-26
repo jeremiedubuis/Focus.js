@@ -62,10 +62,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 html {
   font-size: 18px;
   font-family: "Khmer";
+  width: 100%;
+  height: 100%;
 }
 
 body {
   background: #232222;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 header {
@@ -95,6 +100,7 @@ h1 img {
 
 nav {
   position: relative;
+  z-index: 10;
   margin-right: 20px;
   margin-top: 35px;
   float: right;
@@ -157,6 +163,46 @@ nav #menu-toggle {
     margin-top: 20px;
   }
 }
+#loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  width: 100%;
+  height: 100%;
+  -moz-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+#loader .img-wrapper {
+  width: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+#loader img {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  -moz-transition: opacity 0.4s ease-in;
+  -o-transition: opacity 0.4s ease-in;
+  -webkit-transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-in;
+}
+#loader.hidden {
+  visibility: hidden;
+  background: transparent;
+}
+#loader.hidden img {
+  opacity: 0;
+}
+
 h2 {
   font-weight: bold;
   font-size: 1.7rem;
@@ -209,6 +255,8 @@ section.top p {
 
 #doc {
   position: relative;
+  max-width: 1280px;
+  margin: auto;
 }
 
 .documentation-menu {
@@ -302,6 +350,46 @@ pre {
 .transition-fade-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotate {
+  -webkit-animation: rotate 1s linear infinite;
+  -moz-animation: rotate 1s linear infinite;
+  -ms-animation: rotate 1s linear infinite;
+  -o-animation: rotate 1s linear infinite;
+  animation: rotate 1s linear infinite;
 }
 
 /*

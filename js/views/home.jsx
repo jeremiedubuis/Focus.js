@@ -26,7 +26,7 @@ class Home extends React.Component {
 
             <section className="top">
                 <div>
-                    <img src="img/logo.png" alt="" className="logo"/>
+                    <img src="img/logo-medium.png" alt="" className="logo"/>
 
                     <p className="intro">
                     Focus.js is a front-end framework built to simplify single page application communication.
